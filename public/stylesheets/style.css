@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+@media (max-width: 1365px), (max-height: 767px) {
+  body::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+    padding: 20px;
+    content: "Your window is too small (at least 1366x768px is expected) to play this game. Enlarge the browser window or zoom out to play or disable the CSS @media query.";
+    background-color: black;
+    z-index: 100;
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Game</title>
+  <link rel="stylesheet" href="stylesheets/splash.css" />
+</head>
+<body>
+  <div class="background">
+    <img src="images/2a132afeebedf4f7591b14872379f187.gif" alt = "Delft" style="width:100%">
+    <div>
+      <h1>Delft Memory Game</h1>
+    </div>
+    <form action="/game" method="get">
+      <button type="submit" class='play_button'>Play now!</button>
+  </form>
+  <button type="button" class="play_button how_to">How to play</button>
+  <div class="stats">
+    <h3>-> <%= gamesInitialized %> 
+      <%if (gamesInitialized != 1) { %>
+          games
+      <% } else { %>
+          game
+      <% } %>
+      started <br> 
+      -> <%= gamesCompleted %> 
+      <%if (gamesInitialized != 1) { %>
+          games
+      <% } else { %>
+          game
+      <% } %>
+      completed <br>
+      -> Top score: <%= topScore %> 
+    </h3>
+  </div>
+  </div>
+
+  <section id="post" class="hidden">
+    <div>
+      <h2>How to play</h2>
+      <p id="final">- Turn the same 2 cards to score points <br>- The player with more points wins <br>- You lose points if your guess is wrong</p>
+      <br>
+      <p>
+        <a id="again">Close</a>
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const how_to = document.querySelector('.how_to');
+    const postElt = document.querySelector("#post");
+    const againElt = document.querySelector("#again");
+    againElt.addEventListener("click", closeHow);
+    how_to.addEventListener("click", showHow);
+    function showHow() {
+      postElt.classList.remove("hidden");
+    }
+    function closeHow() {
+      postElt.classList.add("hidden");
+    }
+  </script>
+</body>
+</html>

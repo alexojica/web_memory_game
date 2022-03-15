@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Delft Memory Game</title>
+  <link rel="stylesheet" href="stylesheets/game.css" />
+</head>
+<body>
+<header>
+    <h1 class = "title" data-shadow='memory'>Delft Memory Game</h1>
+</header>
+
+<div id="state">
+  <span id="score">0</span>
+  <span id="opponent-score">0</span>
+  <span id="time">0</span>
+</div>
+  <div>
+  <section class="main">
+    <section class="game-board">
+    <div class="box play" id="0"></div>
+    <div class="box play" id="1"></div>
+    <div class="box play" id="2"></div>
+    <div class="box play" id="3"></div>
+    <div class="box play" id="4"></div>
+    <div class="box play" id="5"></div>
+    <div class="box play" id="6"></div>
+    <div class="box play" id="7"></div>
+    <div class="box play" id="8"></div>
+    <div class="box play" id="9"></div>
+    <div class="box play" id="10"></div>
+    <div class="box play" id="11"></div>
+    <div class="box play" id="12"></div>
+    <div class="box play" id="13"></div>
+    <div class="box play" id="14"></div>
+    <div class="box play" id="15"></div>
+    <div class="box play" id="16"></div>
+    <div class="box play" id="17"></div>
+    <div class="box play" id="18"></div>
+    <div class="box play" id="19"></div>
+    </section>
+  </section>
+  </div>
+  <h2 class="game--status"></h2>
+  
+  <section id="post" class="hidden">
+    <div>
+      <h2>GAME FINISHED!</h2>
+      <p id="final"></p>
+      <br>
+      <p>
+        <a id="again">Play Again !</a>
+      </p>
+    </div>
+  </section>
+  <script src="javascripts/messages.js"></script>
+  <script src="javascripts/interactions.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+@import "style.css";
+
+@import "fonts/stylesheet.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    /* flex: 50%; */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    font-family: arial;
+    position: relative;
+    text-align: center;
+
+
+    background-image: linear-gradient(to right, #0099f7, #f11712);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+  
+  /* HEADER */
+  header {
+    color: white;
+    font-family: 'righteousregular', Arial, Helvetica, sans-serif;
+    letter-spacing: 5px;
+    font-size: 32px;
+    padding: 10px;
+    font-weight: 400;
+  }
+
+  /* main SECTION */
+  .main {
+    background: white;
+    width: 410px;
+    height: 330px;
+    margin: auto;
+    border: none;
+    border-radius: 10px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  
+  .box {
+    background: #6186aa;
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin: 10px 0 0 10px;
+
+    width: 70px;
+    height: 70px;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  
+  .box.play:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  .box img {
+    width: 100%;
+    display: block;
+    max-width:100%;
+    max-height:100%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+  }
+  
+  .box .outlined {
+    border: solid 1px #34495e;
+    background: #1abc9c;
+    opacity: 0.7;
+  }
+  
+  #state {
+    background: #07d3da;
+    background-size: 250%;
+    width: 390px;
+    line-height: 35px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    font-family: 'righteousregular', Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+
+    display: grid; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: arial;
+    position: right;
+    text-align: right;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  #time {
+    font-family: 'permanent_markerregular', Arial, Helvetica, sans-serif;
+    float: left;
+  }
+  
+  #time::after {
+    content: " seconds";
+  }
+
+  #time::before {
+    content: "Time: ";
+  }
+  
+  #score {
+    font-family: 'permanent_markerregular', Arial, Helvetica, sans-serif;
+    float: right;
+  }
+  
+  #score::after {
+    content: " points";
+  }
+
+  #score::before {
+    content: "Your score: ";
+  }
+
+  #opponent-score {
+    font-family: 'permanent_markerregular', Arial, Helvetica, sans-serif;
+    float: right;
+  }
+  
+  #opponent-score::after {
+    content: " points";
+  }
+
+  #opponent-score::before {
+    content: "Opponent score: ";
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  #post h2 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+
+  #post {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+  }
+  
+  #post > div {
+    width: 300px;
+    padding: 20px 0 40px;
+    background: white;
+    color: #6186aa;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  #post p:first-child, 
+  #post #final {
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: auto;
+    padding: 10px 20px;
+  }
+  
+  #post #again {
+    color: #6186aa;
+    text-decoration: none;
+    margin: auto;
+    padding: 10px 20px;
+    width: 160px;
+    border:solid;
+    border-radius: 10px;
+  }
+  
+  #post #again:hover {
+    background: #6186aa;
+    background-size: 250%;
+    color: white;
+    cursor: pointer;
+  }
+
+  .title{
+    animation: glitch 1s linear infinite;
+  }
+  
+  @keyframes glitch{
+    2%,64%{
+      transform: translate(2px,0) skew(0deg);
+    }
+    4%,60%{
+      transform: translate(-2px,0) skew(0deg);
+    }
+    62%{
+      transform: translate(0,0) skew(5deg); 
+    }
+  }
+  
+  .title:before,
+  .title:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+  
+  .title:before{
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+  
+  @keyframes glitchTop{
+    2%,64%{
+      transform: translate(2px,-2px);
+    }
+    4%,60%{
+      transform: translate(-2px,2px);
+    }
+    62%{
+      transform: translate(13px,-1px) skew(-13deg); 
+    }
+  }
+  
+  .title:after{
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+  
+  @keyframes glitchBotom{
+    2%,64%{
+      transform: translate(-2px,0);
+    }
+    4%,60%{
+      transform: translate(-2px,0);
+    }
+    62%{
+      transform: translate(-22px,5px) skew(21deg); 
+    }
+  }
+
+  .game--status{
+    font-family: 'permanent_markerregular', Arial, Helvetica, sans-serif;
+    font-size: 30px;
+  }
+
+ 
